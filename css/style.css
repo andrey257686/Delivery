@@ -33,6 +33,7 @@ body {
 .input-search {
   width: 300px;
   background-image: url(../img/search.svg);
+  margin-left: auto;
 }
 .buttons{
   display: flex;
@@ -57,6 +58,9 @@ body {
 }
 .button-icon {
   margin-right: 6px;
+}
+.button-card-text {
+  margin-right: 4px;
 }
 .promo {
   box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
@@ -90,7 +94,7 @@ body {
 .section-heading {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-bottom: 44px;
 }
 .section-title {
@@ -99,7 +103,8 @@ body {
   font-size: 36px;
   line-height: 42px;
   color: #000000;
-  margin: 0;
+  /* margin: 0; */
+  margin-right: 30px;
 }
 .cards {
   display: flex;
@@ -114,6 +119,7 @@ body {
   overflow: hidden;
   margin-bottom: 30px;
   flex-basis: 31%;
+  text-decoration: none;
 }
 .card-image {
   width: 384px;
@@ -130,6 +136,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 .card-title {
   margin: 0;
@@ -138,6 +145,14 @@ body {
   font-size: 24px;
   line-height: 32px;
   color: #000000;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 260px;
+}
+.card-title-reg {
+  max-width: 337px;
+  font-weight: 400;
 }
 .card-tag {
   font-style: normal;
@@ -153,6 +168,18 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+.card-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+.card-price-bold {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  margin-left: 30px;
 }
 .rating {
   margin-right: 26px;
@@ -172,6 +199,17 @@ body {
 }
 .price {
   margin-right: 10px;
+}
+.ingredients {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #8C8C8C;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
 }
 .category {
   text-overflow: ellipsis;
@@ -264,7 +302,7 @@ body {
   .card-info {
     flex-wrap: wrap;
   }
-  .rating {
+  .card .rating {
     flex-basis: 100%;
   }
   .card-title {
