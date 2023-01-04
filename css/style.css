@@ -280,6 +280,10 @@ body {
   border-radius: 5px;
   padding: 40px 45px;
 }
+.modal-dialog-auth {
+  width: auto;
+  position: relative;
+}
 .modal-header {
   display: flex;
   align-items: center;
@@ -299,8 +303,27 @@ body {
   border: none;
   background-color: transparent;
 }
+.close-auth {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
 .modal-body {
   margin-bottom: 52px;
+}
+.modal-body-auth {
+  margin-bottom: 22px;
+}
+.label-auth {
+  display: block;
+  margin: 30px;
+}
+.label-auth span {
+  width: 80px;
+  display: inline-block;
+}
+.button-login {
+  /* margin-right: auto; */
 }
 .food-row {
   display: flex;
@@ -356,6 +379,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.modal-footer-auth {
+  justify-content: center;
 }
 .footer-buttons {
   display: flex;
