@@ -9,7 +9,7 @@ function toggleModalCard () {
   modalCard.classList.toggle('is-open');
 }
 
-// ------------------- Авторищация ---------------------------
+// ------------------- Авторизация ---------------------------
 
 const authButton = document.querySelector('#auth-button');
 const modalAuth = document.querySelector('.modal-auth');

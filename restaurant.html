@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="css\normalize.css" />
     <link rel="stylesheet" href="css\animate.compat.css" />
+    <script src='js/menu.js' defer></script>
     <title>PizzaBurger - доставка еды на дом</title>
   </head>
   <body>
@@ -27,7 +28,8 @@
           placeholder="Адрес доставки"
         />
         <div class="buttons">
-          <button class="button button-primary" id="auth-button">
+          <span class="user-name"></span>
+          <button class="button button-primary button-auth" id="auth-button">
             <img src="img/user.svg" alt="User" class="button-icon" />
             <span class="button-text">Войти</span>
           </button>
@@ -38,6 +40,10 @@
               class="button-icon"
             />
             <span class="button-text">Корзина</span>
+          </button>
+          <button class="button button-primary button-out">
+            <span class="button-text">Выйти</span>
+            <span class="button-out-svg"></span>
           </button>
         </div>
       </header>
@@ -391,6 +397,6 @@
       <!-- /.modal-dialog -->
     </div>
     <script src="js/wow.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
   </body>
 </html>
