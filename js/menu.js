@@ -1,14 +1,74 @@
-const restaurant = 'tanuki'
+const cardsMenu = document.querySelector(".cards-menu");
 
-const renderItems = (data) => {
-  console.log(data);
+const changeTitle = ({kitchen, name, price, stars}) => {
+  const restaurantHeading = document.querySelector('.section-heading');
+  restaurantHeading.innerHTML = `
+    <h2 class="section-title">${name}</h2>
+    <div class="card-info">
+      <div class="rating">
+        <img src="img/rating.svg" alt="Rating" class="rating-star" />
+        ${stars}
+      </div>
+      <div class="price">От ${price} ₽</div>
+      <div class="category">${kitchen}</div>
+    </div>
+  `;
 }
 
-fetch(`https://test-ef01d-default-rtdb.firebaseio.com/db/${restaurant}.json`)
-  .then((response) => response.json())
-  .then((data) => {
-    renderItems(data);
-  })
-  .catch((error) => {
-    console.log(error);
+const renderItems = (data) => {
+  data.forEach(({ description, id, image, name, price }) => {
+    const card = document.createElement("div");
+
+    card.classList.add("card");
+    card.classList.add("wow");
+    card.classList.add("fadeInUp");
+
+    card.innerHTML = `
+      <img
+        src="${image}"
+        alt="Image"
+        class="card-image"
+      />
+      <div class="card-text">
+        <div class="card-heading">
+          <h3 class="card-title card-title-reg">${name}</h3>
+        </div>
+        <div class="card-info">
+          <div class="ingredients" title="${description}">
+            ${description}
+          </div>
+        </div>
+        <div class="card-buttons">
+          <button class="button button-primary">
+            <span class="button-card-text">В корзину</span>
+            <img
+              src="img/shopping-card-white.svg"
+              alt="Shopping-card"
+              class="button-card-image"
+            />
+          </button>
+          <strong class="card-price-bold">${price} ₽</strong>
+        </div>
+      </div>
+    `;
+
+    cardsMenu.append(card);
   });
+};
+
+if (localStorage.getItem('restaurant')) {
+  const restaurant = JSON.parse(localStorage.getItem('restaurant'));
+  
+  changeTitle(restaurant);
+
+  fetch(`https://test-ef01d-default-rtdb.firebaseio.com/db/${restaurant.products}`)
+    .then((response) => response.json())
+    .then((data) => {
+      renderItems(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+} else {
+  window.location.href = "/";
+}
