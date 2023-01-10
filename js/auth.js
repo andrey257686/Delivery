@@ -1,79 +1,74 @@
-const cardButton = document.querySelector('#card-button');
-const modalCard = document.querySelector('.modal-card');
-const closeCardButton = document.querySelector('.close-card');
+const auth = () => {
 
-cardButton.addEventListener('click', toggleModalCard);
-closeCardButton.addEventListener('click', toggleModalCard);
+  // ------------------- Авторизация ---------------------------
 
-function toggleModalCard () {
-  modalCard.classList.toggle('is-open');
-}
+  const authButton = document.querySelector("#auth-button");
+  const modalAuth = document.querySelector(".modal-auth");
+  const closeAuthButton = document.querySelector(".close-auth");
 
-// ------------------- Авторизация ---------------------------
+  authButton.addEventListener("click", () => {
+    modalAuth.style.display = "flex";
+  });
+  closeAuthButton.addEventListener("click", () => {
+    modalAuth.style.display = "none";
+  });
 
-const authButton = document.querySelector('#auth-button');
-const modalAuth = document.querySelector('.modal-auth');
-const closeAuthButton = document.querySelector('.close-auth');
+  // authButton.addEventListener('click', toggleModalAuth);
+  // closeAuthButton.addEventListener('click', toggleModalAuth);
 
+  // function toggleModalAuth () {
+  //   modalAuth.classList.toggle('is-open');
+  // }
 
-authButton.addEventListener('click', () => {
-  modalAuth.style.display = 'flex';
-});
-closeAuthButton.addEventListener('click', () => {
-  modalAuth.style.display = 'none';
-});
+  const logInForm = document.getElementById("logInForm");
+  const inputLogin = document.getElementById("login");
+  const inputPassword = document.getElementById("password");
+  const buttonOut = document.querySelector(".button-out");
+  const userName = document.querySelector(".user-name");
+  const buttonCart = document.querySelector(".button-card");
 
-// authButton.addEventListener('click', toggleModalAuth);
-// closeAuthButton.addEventListener('click', toggleModalAuth);
+  buttonOut.addEventListener("click", () => {
+    logout();
+  });
 
-// function toggleModalAuth () {
-//   modalAuth.classList.toggle('is-open');
-// }
+  const login = (user) => {
+    authButton.style.display = "none";
+    buttonOut.style.display = "flex";
+    userName.style.display = "flex";
+    buttonCart.style.display = "flex";
+    userName.textContent = user.login;
+    modalAuth.style.display = "none";
+  };
 
-const logInForm = document.getElementById('logInForm');
-const inputLogin = document.getElementById('login');
-const inputPassword = document.getElementById('password');
-const buttonOut = document.querySelector('.button-out');
-const userName = document.querySelector('.user-name');
+  const logout = () => {
+    authButton.style.display = "flex";
+    buttonOut.style.display = "none";
+    userName.style.display = "none";
+    buttonCart.style.display = "none";
+    userName.textContent = "";
 
-buttonOut.addEventListener('click', () => {
-  logout();
-})
+    localStorage.removeItem("user");
+  };
 
-const login = (user) => {
-  authButton.style.display = 'none';
-  buttonOut.style.display = 'flex';
-  userName.style.display = 'flex';
-  userName.textContent = user.login;
-  modalAuth.style.display = 'none';
-}
+  logInForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log(inputLogin.value);
+    console.log(inputPassword.value);
+    const user = {
+      login: inputLogin.value,
+      password: inputPassword.value,
+    };
 
-const logout = () => {
-  authButton.style.display = 'flex';
-  buttonOut.style.display = 'none';
-  userName.style.display = 'none';
-  userName.textContent = '';
+    localStorage.setItem("user", JSON.stringify(user));
+    login(user);
+  });
 
-  localStorage.removeItem('user');
-}
-
-logInForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  console.log(inputLogin.value);
-  console.log(inputPassword.value);
-  const user = {
-    login: inputLogin.value,
-    password: inputPassword.value,
+  if (localStorage.getItem("user")) {
+    login(JSON.parse(localStorage.getItem("user")));
   }
 
-  localStorage.setItem('user', JSON.stringify(user));
-  login(user);
-})
+  // ------------------- Инициализация WOW ---------------------------
+  new WOW().init();
+};
 
-if(localStorage.getItem('user')) {
-  login(JSON.parse(localStorage.getItem('user')));
-}
-
-
-// ------------------- Инициализация WOW ---------------------------
-new WOW().init();
+auth();

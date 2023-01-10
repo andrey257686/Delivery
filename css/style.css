@@ -62,6 +62,11 @@ body {
   color: #fff;
   margin-right: 10px;
 }
+.counter-button:hover {
+  background: #40a9ff;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
 .button-out {
   display: none;
   margin: 0 5px;
