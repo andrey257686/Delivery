@@ -1,14 +1,14 @@
 const cart = () => {
-  const cardButton = document.querySelector("#card-button");
-  const modalCard = document.querySelector(".modal-card");
-  const closeCardButton = modalCard.querySelector(".close");
-  const body = modalCard.querySelector(".modal-body");
-  const buttonSend = modalCard.querySelector('.button-primary');
+  const cartButton = document.querySelector("#cart-button");
+  const modalCart = document.querySelector(".modal-cart");
+  const closeCartButton = modalCart.querySelector(".close");
+  const body = modalCart.querySelector(".modal-body");
+  const buttonSend = modalCart.querySelector('.button-primary');
 
   const resetCart = () => {
     body.innerHTML = '';
     localStorage.removeItem('cart');
-    modalCard.classList.remove('is-open');
+    modalCart.classList.remove('is-open');
   }
 
   const incrementCount = (id) => {
@@ -85,16 +85,16 @@ const cart = () => {
     })
   })
 
-  cardButton.addEventListener("click", () => {
+  cartButton.addEventListener("click", () => {
     if (localStorage.getItem("cart")) {
       renderItems(JSON.parse(localStorage.getItem("cart")));
     }
-    toggleModalCard();
+    toggleModalCart();
   });
-  closeCardButton.addEventListener("click", toggleModalCard);
+  closeCartButton.addEventListener("click", toggleModalCart);
 
-  function toggleModalCard() {
-    modalCard.classList.toggle("is-open");
+  function toggleModalCart() {
+    modalCart.classList.toggle("is-open");
   }
 };
 

@@ -46,6 +46,8 @@ body {
   font-size: 18px;
 }
 .button {
+  display: flex;
+  align-items: center;
   padding: 8px 16px;
   background: #FFFFFF;
   border: 1px solid #D9D9D9;
@@ -56,11 +58,39 @@ body {
   font-size: 16px;
   line-height: 24px;
 }
+.button:hover {
+  cursor: pointer;
+  background: #1890ff;
+  border: 1px solid #1890ff;
+  color: #fff;
+}
 .button-primary {
   background: #1890FF;
   border: 1px solid #1890FF;
   color: #fff;
   margin-right: 10px;
+}
+.button-primary:hover {
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  color: #595959;
+}
+.button-auth {
+  background-position: 20px 13px;
+}
+.button-primary .button-auth-svg {
+  width: 12px;
+  height: 24px;
+  margin-right: 6px;
+  background-color: #fff;
+  /* -webkit-mask: url("../img/user.svg") no-repeat 50% 50%; */
+  mask: url("../img/user.svg") no-repeat 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.button-primary:hover .button-auth-svg {
+  background-color: #595959;
 }
 .counter-button:hover {
   background: #40a9ff;
@@ -74,8 +104,29 @@ body {
 .button-icon {
   margin-right: 6px;
 }
-.button-card-text {
+.button-cart-text {
   margin-right: 4px;
+}
+.button .button-cart-svg {
+  width: 15px;
+  height: 24px;
+  margin-right: 6px;
+  background-color: #595959;
+  /* -webkit-mask: url("../img/icon/shopping-cart.svg") no-repeat 50% 50%; */
+  mask: url("../img/shopping-cart.svg") no-repeat 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.button-primary .button-cart-svg {
+  background-color: #fff;
+}
+
+.button:hover .button-cart-svg {
+  background-color: #fff;
+}
+
+.button-primary:hover .button-cart-svg {
+  background-color: #595959;
 }
 .promo {
   box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);

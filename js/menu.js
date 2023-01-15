@@ -60,11 +60,7 @@ const menu = () => {
           <div class="card-buttons">
             <button class="button button-primary">
               <span class="button-card-text">В корзину</span>
-              <img
-                src="img/shopping-card-white.svg"
-                alt="Shopping-card"
-                class="button-card-image"
-              />
+              <span class="button-cart-svg"></span>
             </button>
             <strong class="card-price-bold">${price} ₽</strong>
           </div>

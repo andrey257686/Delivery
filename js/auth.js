@@ -25,7 +25,7 @@ const auth = () => {
   const inputPassword = document.getElementById("password");
   const buttonOut = document.querySelector(".button-out");
   const userName = document.querySelector(".user-name");
-  const buttonCart = document.querySelector(".button-card");
+  const buttonCart = document.querySelector(".button-cart");
 
   buttonOut.addEventListener("click", () => {
     logout();

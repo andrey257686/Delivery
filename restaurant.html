@@ -31,15 +31,17 @@
         <div class="buttons">
           <span class="user-name"></span>
           <button class="button button-primary button-auth" id="auth-button">
-            <img src="img/user.svg" alt="User" class="button-icon" />
+            <!-- <img src="img/user.svg" alt="User" class="button-icon" /> -->
+            <span class="button-auth-svg"></span>
             <span class="button-text">Войти</span>
           </button>
-          <button class="button button-card" id="card-button">
-            <img
+          <button class="button button-cart" id="cart-button" style="display: none;">
+            <!-- <img
               src="img/shopping-card.svg"
               alt="Shopping card"
               class="button-icon"
-            />
+            /> -->
+            <span class="button-cart-svg"></span>
             <span class="button-text">Корзина</span>
           </button>
           <button class="button button-primary button-out">
@@ -92,18 +94,18 @@
       <!-- /.container -->
     </footer>
 
-    <div class="modal modal-card">
+    <div class="modal modal-cart">
       <div class="modal-dialog">
         <div class="modal-header">
           <h3 class="modal-title">Корзина</h3>
-          <button class="close close-card">&times;</button>
+          <button class="close close-cart">&times;</button>
         </div>
         <!-- /.modal-header -->
         <div class="modal-body">
         </div>
         <!-- /.modal-body -->
         <div class="modal-footer">
-          <span class="modal-pricetag">1250 ₽</span>
+          <span class="modal-pricetag">0 ₽</span>
           <div class="footer-buttons">
             <button class="button button-primary">Оформить заказ</button>
             <button class="button">Отмена</button>

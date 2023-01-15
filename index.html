@@ -31,15 +31,17 @@
         <div class="buttons">
           <span class="user-name"></span>
           <button class="button button-primary button-auth" id="auth-button">
-            <img src="img/user.svg" alt="User" class="button-icon" />
+            <!-- <img src="img/user.svg" alt="User" class="button-icon" /> -->
+            <span class="button-auth-svg"></span>
             <span class="button-text">Войти</span>
           </button>
-          <button class="button button-card" id="card-button">
-            <img
+          <button class="button button-cart" id="cart-button" style="display: none;">
+            <!-- <img
               src="img/shopping-card.svg"
               alt="Shopping card"
               class="button-icon"
-            />
+            /> -->
+            <span class="button-cart-svg"></span>
             <span class="button-text">Корзина</span>
           </button>
           <button class="button button-primary button-out">
@@ -70,8 +72,7 @@
               placeholder="Поиск блюд и ресторанов"
             />
           </div>
-          <div class="cards cards-restaurants">
-          </div>
+          <div class="cards cards-restaurants"></div>
           <!-- /.cards -->
         </sectiom>
       </div>
@@ -89,9 +90,15 @@
             <a href="#" class="footer-link">Контакты</a>
           </nav>
           <div class="social-links">
-            <a href="#" class="social-link"><img src="img/instagram.svg" alt="Instagram" /></a>
-            <a href="#" class="social-link"><img src="img/fb.svg" alt="Facebook" /></a>
-            <a href="#" class="social-link"><img src="img/vk.svg" alt="VK" /></a>
+            <a href="#" class="social-link"
+              ><img src="img/instagram.svg" alt="Instagram"
+            /></a>
+            <a href="#" class="social-link"
+              ><img src="img/fb.svg" alt="Facebook"
+            /></a>
+            <a href="#" class="social-link"
+              ><img src="img/vk.svg" alt="VK"
+            /></a>
           </div>
           <!-- /.social-links -->
         </div>
@@ -99,65 +106,19 @@
       </div>
       <!-- /.container -->
     </footer>
-    
-    <div class="modal modal-card">
+
+    <div class="modal modal-cart">
       <div class="modal-dialog">
         <div class="modal-header">
           <h3 class="modal-title">Корзина</h3>
-          <button class="close close-card">&times;</button>
+          <button class="close close-cart">&times;</button>
         </div>
         <!-- /.modal-header -->
         <div class="modal-body">
-          <div class="food-row">
-            <span class="food-name">Ролл угорь стандарт</span>
-            <strong class="food-price">250 ₽</strong>
-            <div class="food-counter">
-              <button class="counter-button">-</button>
-              <span class="counter">1</span>
-              <button class="counter-button">+</button>
-            </div>
-          </div>
-          <div class="food-row">
-            <span class="food-name">Ролл угорь стандарт</span>
-            <strong class="food-price">250 ₽</strong>
-            <div class="food-counter">
-              <button class="counter-button">-</button>
-              <span class="counter">1</span>
-              <button class="counter-button">+</button>
-            </div>
-          </div>
-          <div class="food-row">
-            <span class="food-name">Ролл угорь стандарт</span>
-            <strong class="food-price">250 ₽</strong>
-            <div class="food-counter">
-              <button class="counter-button">-</button>
-              <span class="counter">1</span>
-              <button class="counter-button">+</button>
-            </div>
-          </div>
-          <div class="food-row">
-            <span class="food-name">Ролл угорь стандарт</span>
-            <strong class="food-price">250 ₽</strong>
-            <div class="food-counter">
-              <button class="counter-button">-</button>
-              <span class="counter">1</span>
-              <button class="counter-button">+</button>
-            </div>
-          </div>
-          <div class="food-row">
-            <span class="food-name">Ролл угорь стандарт</span>
-            <strong class="food-price">250 ₽</strong>
-            <div class="food-counter">
-              <button class="counter-button">-</button>
-              <span class="counter">1</span>
-              <button class="counter-button">+</button>
-            </div>
-          </div>
-          <!-- /.foods-row -->
         </div>
         <!-- /.modal-body -->
         <div class="modal-footer">
-          <span class="modal-pricetag">1250 ₽</span>
+          <span class="modal-pricetag">0 ₽</span>
           <div class="footer-buttons">
             <button class="button button-primary">Оформить заказ</button>
             <button class="button">Отмена</button>
@@ -175,17 +136,19 @@
             <legend class="modal-title">Авторизация</legend>
             <label class="label-auth">
               <span>Логин</span>
-              <input id="login" type="text">
+              <input id="login" type="text" />
             </label>
             <label class="label-auth">
               <span>Пароль</span>
-              <input id="password" type="password">
+              <input id="password" type="password" />
             </label>
           </fieldset>
           <!-- /.modal-body -->
           <div class="modal-footer modal-footer-auth">
             <div class="footer-buttons">
-              <button class="button button-primary button-login" type="submit">Войти</button>
+              <button class="button button-primary button-login" type="submit">
+                Войти
+              </button>
             </div>
           </div>
         </form>
